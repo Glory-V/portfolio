@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Added for responsive design -->
+    <link rel="stylesheet" href="./src/portfolio-reviewed.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Block: hero-page -->
+    <div class="hero-page">
+        <!-- Block: header -->
+        <header class="header">
+            <!-- Element: header__title -->
+            <h1 class="header__title">Luxe</h1>
+
+            <!-- Block: navbar -->
+            <nav class="navbar">
+                <!-- Corrected from p to a tags for proper navigation -->
+                <!-- Each item is now a link, which is the correct semantic usage for navigation -->
+                <a href="#home" class="navbar__item">Home</a> <!-- Wrapped in anchor for navigation -->
+                <a href="#service" class="navbar__item">Service</a>
+                <a href="#portfolio" class="navbar__item">Portfolio</a>
+                <a href="#how-we-work" class="navbar__item">How we work</a>
+            </nav>
+
+            <!-- Element: header__menu -->
+            <button type="button" aria-label="menu" class="header__menu">
+                <img src="./assets/menu.svg" alt="menu icon" />
+            </button>
+        </header>
+
+        <!-- Block: main-content -->
+        <main class="main-content">
+            <div class="main-content__text">
+                <!-- Element: main-content__intro -->
+                <p class="main-content__intro">Hi, there!</p>
+
+                <!-- Element: main-content__tagline -->
+                <p class="main-content__tagline">
+                    <span class="main-content__brand">Luxe</span> is here to be your assistance
+                </p>
+
+                <!-- Element: main-content__description -->
+                <p class="main-content__description">
+                    I am here ready to help you in making creative digital products
+                </p>
+
+                <!-- Element: main-content__btn -->
+                <button type="button" aria-label="discuss" class="main-content__btn">Let’s Discuss</button>
+            </div>
+
+            <!-- Element: main-content__banner -->
+            <div class="main-content__banner">
+                <img src="./assets/hero-banner.svg" alt="hero banner showcasing achievements" />
+            </div>
+        </main>
+
+        <!-- Block: services -->
+        <section class="services" id="service"> <!-- Added id for navigation targeting -->
+            <!-- Element: services__header -->
+            <h3 class="services__header">Our Service</h3>
+
+            <!-- Block: services__list -->
+            <div class="services__list">
+                <!-- Block: service (Item 1) -->
+                <div class="service">
+                    <img class="service__img" src="./assets/branding.svg" alt="Branding icon" />
+                    <div class="service__details">
+                        <!-- Element: service__title -->
+                        <p class="service__title">Branding</p>
+                        <!-- Element: service__info -->
+                        <p class="service__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+                <!-- Block: service (Item 2) -->
+                <div class="service">
+                    <img class="service__img" src="./assets/ui-design.svg" alt="UI/UX icon" />
+                    <div class="service__details">
+                        <p class="service__title">UI/UX</p>
+                        <p class="service__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+                <!-- Block: service (Item 3) -->
+                <div class="service">
+                    <img class="service__img" src="./assets/product.svg" alt="Product Design icon" />
+                    <div class="service__details">
+                        <p class="service__title">Product Design</p>
+                        <p class="service__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
+
+<!-- Comments on Updates:
+Changed <p> tags to <a> tags in the navigation:
+Why: The nav element is meant for navigation, and links should be used inside it for proper semantic structure and functionality. Replacing the <p> tags with <a> ensures that the navigation options are interactive and accessible.
+How: Each navigation item is now wrapped in an <a> tag with an appropriate href attribute (e.g., href="#home") to target sections of the page or other URLs.
+
+Added alt attributes for images:
+Why: Improves accessibility by describing the content of the images to users who rely on screen readers or for when images fail to load.
+
+Added meta name="viewport":
+Why: Ensures the page scales correctly on mobile devices for a responsive layout.
+
+BEM Methodology:
+Consistent application of the BEM naming convention for blocks, elements, and modifiers.
+
+IDs for Section Linking:
+Why: Added id attributes to the <section> tags (e.g., id="service") so the navigation links in the navbar can link to the appropriate sections of the page when clicked. -->
