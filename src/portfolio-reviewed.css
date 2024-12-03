@@ -1,0 +1,232 @@
+/* Modern CSS: Using CSS layers for organization */
+/* ========================== */
+/* Layer: Variables */
+/* ========================== */
+@layer variables {
+
+    /* Define CSS variables for colors, font sizes, and spacing */
+    :root {
+        --color-primary: #DC0155;
+        --color-secondary: #333;
+        --color-light-bg: #F4F3F8;
+        --color-text-light: #909090;
+
+        --font-family-main: 'Poppins', sans-serif;
+        --font-family-display: 'Bebas Neue', sans-serif;
+
+        --font-size-base: 18px;
+        --font-size-lg: 24px;
+        --font-size-xl: 36px;
+        --font-size-xxl: 48px;
+        --font-size-display: 120px;
+
+        --space-lg: 48px;
+        --space-md: 32px;
+        --space-sm: 8px;
+        --space-xs: 16px;
+
+        --border-radius-btn: 32px;
+    }
+}
+
+/* ========================== */
+/* Layer: Base styles */
+/* ========================== */
+@layer base {
+
+    /* Global reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+        display: flex;
+        background-color: var(--color-light-bg);
+        font-family: var(--font-family-main);
+        font-size: var(--font-size-base);
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ========================== */
+/* Layer: Components (BEM conventions) */
+/* ========================== */
+@layer components {
+
+    /* Block: hero-page */
+    .hero-page {
+        padding-left: 160px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-light-bg);
+    }
+
+    /* Block: header */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 160px;
+        color: var(--color-primary);
+    }
+
+    /* Element: header__title */
+    .header__title {
+        font-size: var(--font-size-xxl);
+        font-weight: 600;
+    }
+
+    /* Block: navbar */
+    .navbar {
+        display: flex;
+        gap: var(--space-md);
+        margin: auto 0;
+    }
+
+    /* Element: navbar__item */
+    .navbar__item {
+        text-decoration: none;
+        /* Ensure links are styled correctly */
+        color: var(--color-secondary);
+        font-weight: 400;
+    }
+
+    /* Element: header__menu */
+    .header__menu {
+        width: 32px;
+        height: 32px;
+        margin: auto 0;
+    }
+
+    /* Block: main-content */
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    /* Element: main-content__text */
+    .main-content__text {
+        margin-top: 60px;
+        background-color: var(--color-light-bg);
+    }
+
+    .main-content__intro {
+        font-size: var(--font-size-lg);
+        color: var(--color-secondary);
+        padding-bottom: var(--space-sm);
+        font-weight: 500;
+    }
+
+    .main-content__tagline {
+        font-size: var(--font-size-display);
+        font-family: var(--font-family-display);
+        color: var(--color-secondary);
+        line-height: 1;
+        padding-bottom: var(--space-xs);
+    }
+
+    .main-content__brand {
+        color: var(--color-primary);
+    }
+
+    .main-content__description {
+        font-size: var(--font-size-lg);
+        color: var(--color-secondary);
+        line-height: 40px;
+        padding-bottom: var(--space-lg);
+    }
+
+    /* Element: main-content__btn */
+    .main-content__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 60px;
+        border-radius: var(--border-radius-btn);
+        background-color: var(--color-primary);
+        color: var(--color-light-bg);
+        font-size: var(--font-size-base);
+        border: none;
+    }
+
+    /* Block: services */
+    .services {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+        padding-bottom: 80px;
+    }
+
+    /* Element: services__header */
+    .services__header {
+        font-family: var(--font-family-display);
+        font-size: var(--font-size-xxl);
+        color: var(--color-secondary);
+    }
+
+    /* Block: services__list */
+    .services__list {
+        display: flex;
+        gap: var(--space-md);
+    }
+
+    /* Block: service */
+    .service {
+        max-width: 376px;
+    }
+
+    /* Element: service__img */
+    .service__img {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* Element: service__details */
+    .service__details {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    /* Element: service__title */
+    .service__title {
+        font-size: var(--font-size-lg);
+        font-weight: 500;
+        color: var(--color-secondary);
+    }
+
+    /* Element: service__info */
+    .service__info {
+        font-size: var(--font-size-base);
+        font-weight: 400;
+        color: var(--color-text-light);
+    }
+}
+
+
+/* CSS Layers:
+  
+  Introduced CSS layers (@layer) to organize the code into logical sections: variables, base, and components. This makes the code more maintainable and modular.
+  
+  CSS Variables:
+  Defined reusable variables (--color-primary, --font-size-lg, etc.) for colors, font sizes, and spacing. This improves scalability and consistency, making future updates easier.
+  
+  BEM Naming:
+  Updated the CSS to follow BEM conventions based on the updated HTML structure. For example, .navbar-wrapper became .navbar, and .navbar-option became .navbar__item.
+  
+  Modern CSS Properties:
+  Used modern CSS for better control of typography, spacing, and layouts. Variables like --space-lg ensure consistent spacing across the design.
+  
+  Responsive Design Consideration:
+  By defining base styles such as setting img { max-width: 100%; } and adding meta viewport in the HTML, the layout is more responsive across different devices. */
